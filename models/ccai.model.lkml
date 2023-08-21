@@ -26,3 +26,7 @@ persist_with: ccai_default_datagroup
 # Each joined view also needs to define a primary key.
 
 explore: dialogflow_bigquery_export_data {}
+
+explore: dialogflow_bigquery_export_data_updated {}
+
+explore: requests_log_derived_table {}
