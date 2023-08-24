@@ -12,16 +12,19 @@ view: dfcx_download {
   # This dimension will be called "Insert ID" in Explore.
 
   dimension: insert_id {
+    hidden: yes
     type: string
     sql: ${TABLE}.insertId ;;
   }
 
   dimension: jp_debug_mode {
+    hidden: yes
     type: yesno
     sql: ${TABLE}.jsonPayload_debugMode ;;
   }
 
   dimension: jp_detect_intent_response_id {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_detectIntentResponseId ;;
   }
@@ -61,6 +64,7 @@ view: dfcx_download {
   }
 
   dimension: jp_intent_info_last_matched_intent {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_intentInfo_lastMatchedIntent ;;
   }
@@ -71,21 +75,25 @@ view: dfcx_download {
   }
 
   dimension: jp_messages {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_messages ;;
   }
 
   dimension: jp_output_audio_config_synthesize_speech_config_voice_name {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_outputAudioConfig_synthesizeSpeechConfig_voice_name ;;
   }
 
   dimension: jp_output_audio_config_synthesize_speech_config_voice_ssml_gender {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_outputAudioConfig_synthesizeSpeechConfig_voice_ssmlGender ;;
   }
 
   dimension: jp_page_info_current_page {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_pageInfo_currentPage ;;
   }
@@ -96,6 +104,7 @@ view: dfcx_download {
   }
 
   dimension: jp_page_info_form_info {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_pageInfo_formInfo ;;
   }
@@ -106,6 +115,7 @@ view: dfcx_download {
   }
 
   dimension: jp_query_input_intent_intent {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_queryInput_intent_intent ;;
   }
@@ -126,11 +136,13 @@ view: dfcx_download {
   }
 
   dimension: jp_query_params_current_page {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_queryParams_currentPage ;;
   }
 
   dimension: jp_query_params_parameters {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_queryParams_parameters ;;
   }
@@ -141,31 +153,37 @@ view: dfcx_download {
   }
 
   dimension: jp_query_params_telephony_caller_id {
+    hidden: yes
     type: number
     sql: ${TABLE}.jsonPayload_queryParams_telephonyCallerId ;;
   }
 
   dimension: jp_query_params_time_zone {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_queryParams_timeZone ;;
   }
 
   dimension: jp_query_result_advanced_settings_audio_export_gcs_destination {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_queryResult_advancedSettings_audioExportGcsDestination ;;
   }
 
   dimension: jp_query_result_advanced_settings_logging_settings_enable_interaction_logging {
+    hidden: yes
     type: yesno
     sql: ${TABLE}.jsonPayload_queryResult_advancedSettings_loggingSettings_enableInteractionLogging ;;
   }
 
   dimension: jp_query_result_advanced_settings_speech_settings_endpointer_sensitivity {
+    hidden: yes
     type: number
     sql: ${TABLE}.jsonPayload_queryResult_advancedSettings_speechSettings_endpointerSensitivity ;;
   }
 
   dimension: jp_query_result_advanced_settings_speech_settings_no_speech_timeout {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_queryResult_advancedSettings_speechSettings_noSpeechTimeout ;;
   }
@@ -176,6 +194,7 @@ view: dfcx_download {
   }
 
   dimension: jp_query_result_current_flow_name {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_queryResult_currentFlow_name ;;
   }
@@ -186,21 +205,25 @@ view: dfcx_download {
   }
 
   dimension: jp_query_result_current_page_name {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_queryResult_currentPage_name ;;
   }
 
   dimension: jp_query_result_diagnostic_info_alternative_matched_intents {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_queryResult_diagnosticInfo_Alternative_Matched_Intents ;;
   }
 
   dimension: jp_query_result_diagnostic_info_execution_sequence {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_queryResult_diagnosticInfo_Execution_Sequence ;;
   }
 
   dimension: jp_query_result_diagnostic_info_response_id {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_queryResult_diagnosticInfo_Response_Id ;;
   }
@@ -211,11 +234,13 @@ view: dfcx_download {
   }
 
   dimension: jp_query_result_diagnostic_info_transition_targets_chain {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_queryResult_diagnosticInfo_Transition_Targets_Chain ;;
   }
 
   dimension: jp_query_result_diagnostic_info_triggered_transition_names {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_queryResult_diagnosticInfo_Triggered_Transition_Names ;;
   }
@@ -236,6 +261,7 @@ view: dfcx_download {
   }
 
   dimension: jp_query_result_intent_name {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_queryResult_intent_name ;;
   }
@@ -261,6 +287,7 @@ view: dfcx_download {
   }
 
   dimension: jp_query_result_match_intent_name {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_queryResult_match_intent_name ;;
   }
@@ -281,6 +308,7 @@ view: dfcx_download {
   }
 
   dimension: jp_query_result_response_messages {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_queryResult_responseMessages ;;
   }
@@ -296,6 +324,7 @@ view: dfcx_download {
   }
 
   dimension: jp_query_result_trigger_intent {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_queryResult_triggerIntent ;;
   }
@@ -306,6 +335,7 @@ view: dfcx_download {
   }
 
   dimension: jp_query_result_webhook_ids {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_queryResult_webhookIds ;;
   }
@@ -316,6 +346,7 @@ view: dfcx_download {
   }
 
   dimension: jp_query_result_webhook_payloads {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_queryResult_webhookPayloads ;;
   }
@@ -341,6 +372,7 @@ view: dfcx_download {
   }
 
   dimension: jp_session {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_session ;;
   }
@@ -351,6 +383,7 @@ view: dfcx_download {
   }
 
   dimension: jp_session_info_session {
+    hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_sessionInfo_session ;;
   }
@@ -366,16 +399,19 @@ view: dfcx_download {
   }
 
   dimension: labels_agent_id {
+    hidden: yes
     type: string
     sql: ${TABLE}.labels_agent_id ;;
   }
 
   dimension: labels_environment_id {
+    hidden: yes
     type: string
     sql: ${TABLE}.labels_environment_id ;;
   }
 
   dimension: labels_location_id {
+    hidden: yes
     type: string
     sql: ${TABLE}.labels_location_id ;;
   }
@@ -386,11 +422,13 @@ view: dfcx_download {
   }
 
   dimension: log_name {
+    hidden: yes
     type: string
     sql: ${TABLE}.logName ;;
   }
 
   dimension: receive_location {
+    hidden: yes
     type: string
     sql: ${TABLE}.receiveLocation ;;
   }
@@ -413,16 +451,19 @@ view: dfcx_download {
   }
 
   dimension: resource_labels_project_id {
+    hidden: yes
     type: string
     sql: ${TABLE}.resource_labels_project_id ;;
   }
 
   dimension: resource_type {
+    hidden: yes
     type: string
     sql: ${TABLE}.resource_type ;;
   }
 
   dimension: severity {
+    hidden: yes
     type: string
     sql: ${TABLE}.severity ;;
   }
