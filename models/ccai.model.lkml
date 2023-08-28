@@ -29,6 +29,6 @@ explore: dialogflow_bigquery_export_data {}
 
 explore: dialogflow_bigquery_export_data_updated {}
 
-explore: requests_log_derived_table {}
+# explore: requests_log_derived_table {}
 
 explore: dfcx_download {}

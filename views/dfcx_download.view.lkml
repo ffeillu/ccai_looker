@@ -446,6 +446,16 @@ view: dfcx_download {
     sql: ${TABLE}.receiveLocation ;;
   }
 
+  dimension: jp_queryResult_parameters_topic {
+    type: string
+    sql: ${TABLE}.jsonPayload_queryResult_parameters_topic ;;
+  }
+
+  dimension: jp_queryResult_parameters_surveyscore {
+    type: string
+    sql: ${TABLE}.jsonPayload_queryResult_parameters_surveyscore ;;
+  }
+
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
   # Looker converts dates and timestamps to the specified timeframes within the dimension group.
 
