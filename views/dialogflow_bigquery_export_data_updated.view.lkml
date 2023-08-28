@@ -50,6 +50,13 @@ view: dialogflow_bigquery_export_data_updated {
 
   dimension: match_type {
     type: string
+    sql: CASE WHEN ${TABLE}.match_type = "Kitchen Llm Input" THEN "Kitchen LLM Input" else ${TABLE}.match_type END ;;
+    }
+
+
+
+  dimension: match_type_raw {
+    type: string
     sql: ${TABLE}.match_type ;;
   }
 
