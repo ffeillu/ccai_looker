@@ -40,6 +40,7 @@ view: dfcx_download {
   }
 
   dimension: jp_intent_info_confidence {
+    group_label: "Intent"
     type: number
     sql: ${TABLE}.jsonPayload_intentInfo_confidence ;;
   }
@@ -49,16 +50,20 @@ view: dfcx_download {
   # Click on the type parameter to see all the options in the Quick Help panel on the right.
 
   measure: total_jp_intent_info_confidence {
+    group_label: "Intent"
     type: sum
     sql: ${jp_intent_info_confidence} ;;
   }
 
   measure: average_jp_intent_info_confidence {
+    group_label: "Intent"
     type: average
     sql: ${jp_intent_info_confidence} ;;
   }
 
   dimension: jp_intent_info_display_name {
+    group_label: "Intent"
+    description: "A description of the caller's intent"
     type: string
     sql: ${TABLE}.jsonPayload_intentInfo_displayName ;;
   }
@@ -70,6 +75,8 @@ view: dfcx_download {
   }
 
   dimension: jp_language_code {
+    label: "Language"
+    description: "Language in which conversation took place"
     type: string
     sql: ${TABLE}.jsonPayload_languageCode ;;
   }
@@ -110,6 +117,7 @@ view: dfcx_download {
   }
 
   dimension: jp_payload_telephony_caller_id {
+    group_label: "IDs"
     type: number
     sql: ${TABLE}.jsonPayload_payload_telephony_caller_id ;;
   }
@@ -148,6 +156,7 @@ view: dfcx_download {
   }
 
   dimension: jp_query_params_payload_telephony_caller_id {
+    group_label: "IDs"
     type: number
     sql: ${TABLE}.jsonPayload_queryParams_payload_telephony_caller_id ;;
   }
@@ -223,6 +232,7 @@ view: dfcx_download {
   }
 
   dimension: jp_query_result_diagnostic_info_response_id {
+    group_label: "IDs"
     hidden: yes
     type: string
     sql: ${TABLE}.jsonPayload_queryResult_diagnosticInfo_Response_Id ;;
@@ -298,6 +308,8 @@ view: dfcx_download {
   }
 
   dimension: jp_query_result_match_resolved_input {
+    description: "User Question / Message to bot"
+    label: "User Query"
     type: string
     sql: ${TABLE}.jsonPayload_queryResult_match_resolvedInput ;;
   }
@@ -417,6 +429,7 @@ view: dfcx_download {
   }
 
   dimension: labels_session_id {
+    group_label: "IDs"
     type: string
     sql: ${TABLE}.labels_session_id ;;
   }
@@ -469,6 +482,9 @@ view: dfcx_download {
   }
 
   dimension_group: timestamp {
+    group_label: "Conversation Time"
+    label: "Conversation Time"
+    description: "Time when conversation occurred"
     type: time
     timeframes: [
       raw,

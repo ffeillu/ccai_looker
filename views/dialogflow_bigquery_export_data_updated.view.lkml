@@ -2,7 +2,7 @@
 view: dialogflow_bigquery_export_data_updated {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `lab-hadley-genai.bot_data.dialogflow_bigquery_export_data_updated`
+  sql_table_name: `data-science-66d-demos.bot_data.dialogflow_bigquery_export_data_updated`
     ;;
   # No primary key is defined for this view. In order to join this view in an Explore,
   # define primary_key: yes on a dimension that has no repeated values.
@@ -17,6 +17,7 @@ view: dialogflow_bigquery_export_data_updated {
   }
 
   dimension: conversation_signals {
+    hidden: yes
     type: string
     sql: ${TABLE}.conversation_signals ;;
   }
