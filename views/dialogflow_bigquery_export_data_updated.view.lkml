@@ -38,7 +38,7 @@ view: dialogflow_bigquery_export_data_updated {
     value_format_name: percent_2
   }
 
-  dimension: intent_triggered {
+  dimension: intent_triggered_raw {
     type: string
     sql: ${TABLE}.intent_triggered ;;
   }
@@ -48,14 +48,14 @@ view: dialogflow_bigquery_export_data_updated {
     sql: ${TABLE}.language_code ;;
   }
 
-  dimension: match_type {
+  dimension: intent_triggered {
     type: string
-    sql: CASE WHEN ${TABLE}.match_type = "Kitchen Llm Input" THEN "Kitchen LLM Input" else ${TABLE}.match_type END ;;
+    sql: CASE WHEN ${TABLE}.intent_triggered = "Kitchen Llm Input" THEN "Kitchen LLM Input" else ${TABLE}.intent_triggered END ;;
     }
 
 
 
-  dimension: match_type_raw {
+  dimension: match_type {
     type: string
     sql: ${TABLE}.match_type ;;
   }

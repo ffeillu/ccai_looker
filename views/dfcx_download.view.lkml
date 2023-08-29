@@ -2,7 +2,7 @@
 view: dfcx_download {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `data-science-66d-demos.bot_data.dfcx_download`
+  sql_table_name: `data-science-66d-demos.bot_data.dfcx_download_updated`
     ;;
   # No primary key is defined for this view. In order to join this view in an Explore,
   # define primary_key: yes on a dimension that has no repeated values.
@@ -293,7 +293,7 @@ view: dfcx_download {
 
   dimension: jp_query_result_match_intent_display_name {
     type: string
-    sql: ${TABLE}.jsonPayload_queryResult_match_intent_displayName ;;
+    sql: CASE WHEN ${TABLE}.jsonPayload_queryResult_match_intent_displayName_format = "Kitchen Llm Input" THEN "Kitchen LLM Input" else ${TABLE}.jsonPayload_queryResult_match_intent_displayName_format END ;;
   }
 
   dimension: jp_query_result_match_intent_name {
@@ -304,7 +304,7 @@ view: dfcx_download {
 
   dimension: jp_query_result_match_match_type {
     type: string
-    sql: ${TABLE}.jsonPayload_queryResult_match_matchType ;;
+    sql: ${TABLE}.jsonPayload_queryResult_match_matchType_format ;;
   }
 
   dimension: jp_query_result_match_resolved_input {
@@ -517,6 +517,19 @@ view: dfcx_download {
     type: count
     drill_fields: [detail*]
   }
+
+  measure: number_of_sessions {
+    type: count_distinct
+    sql: ${labels_session_id} ;;
+  }
+
+  measure: average_query_result_match_confidence {
+    group_label: "Intent"
+    type: average
+    sql: ${jp_query_result_match_confidence} ;;
+    value_format_name: percent_2
+  }
+
 
   # ----- Sets of fields for drilling ------
   set: detail {
