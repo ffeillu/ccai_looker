@@ -530,6 +530,17 @@ view: dfcx_download {
     value_format_name: percent_2
   }
 
+  measure: surveyscore {
+    type: number
+    sql: ${TABLE}.jsonPayload_queryResult_parameters_surveyscore ;;
+  }
+
+  measure: average_surveyscore {
+    type: average
+    sql: ${TABLE}.jsonPayload_queryResult_parameters_surveyscore ;;
+    value_format: "0.00"
+  }
+
 
   # ----- Sets of fields for drilling ------
   set: detail {

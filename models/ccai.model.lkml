@@ -31,4 +31,11 @@ explore: dialogflow_bigquery_export_data_updated {}
 
 # explore: requests_log_derived_table {}
 
-explore: dfcx_download {}
+explore: dfcx_download {
+  join: dialogflow_bigquery_export_data_updated {
+    type: left_outer
+    sql_on: ${dfcx_download.labels_session_id}= ${dialogflow_bigquery_export_data_updated.session_id} ;;
+    relationship: many_to_one
+  }
+
+}
