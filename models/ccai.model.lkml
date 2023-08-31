@@ -33,7 +33,7 @@ explore: dialogflow_bigquery_export_data_updated {}
 
 explore: dfcx_download {
   join: dialogflow_bigquery_export_data_updated {
-    type: left_outer
+    type: inner
     sql_on: ${dfcx_download.labels_session_id}= ${dialogflow_bigquery_export_data_updated.session_id} ;;
     relationship: many_to_one
   }

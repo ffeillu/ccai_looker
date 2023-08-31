@@ -155,4 +155,10 @@ view: dialogflow_bigquery_export_data_updated {
     value_format_name: percent_2
   }
 
+  measure: dummy {
+    type: max
+    sql: 1 ;;
+
+  }
+
 }
