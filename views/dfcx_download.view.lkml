@@ -12,6 +12,7 @@ view: dfcx_download {
   # This dimension will be called "Insert ID" in Explore.
 
   dimension: insert_id {
+    primary_key: yes
     hidden: yes
     type: string
     sql: ${TABLE}.insertId ;;

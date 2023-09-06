@@ -11,6 +11,14 @@ view: dialogflow_bigquery_export_data_updated {
   # A dimension is a groupable field that can be used to filter query results.
   # This dimension will be called "Agent ID" in Explore.
 
+  dimension: uuid {
+    primary_key: yes
+    type: string
+    sql: ${TABLE}.uuid ;;
+  }
+
+
+
   dimension: agent_id {
     type: string
     sql: ${TABLE}.agent_id ;;
