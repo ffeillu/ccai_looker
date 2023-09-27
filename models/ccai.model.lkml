@@ -25,8 +25,13 @@ persist_with: ccai_default_datagroup
 # Typically, join parameters require that you define the join type, join relationship, and a sql_on clause.
 # Each joined view also needs to define a primary key.
 
-explore: dfcx_requests_log {}
-
+explore: dfcx_requests_log {
+  join: dialogflow_bigquery_export_data_updated {
+    type: inner
+    sql_on: ${dfcx_requests_log.session_id} = ${dialogflow_bigquery_export_data_updated.session_id} and ${dialogflow_bigquery_export_data_updated.query_input}=${dfcx_requests_log.resolved_input};;
+    relationship: one_to_one
+}
+}
 explore: dialogflow_bigquery_export_data_updated {}
 
 # explore: requests_log_derived_table {}
