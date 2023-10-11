@@ -1,8 +1,9 @@
 # Define the database connection to be used for this model.
 connection: "ccai_bot_data"
 
-# include all the views
+# include all the views and dashboards
 include: "/views/**/*.view"
+# include: "/*.dashboard"
 
 # Datagroups define a caching policy for an Explore. To learn more,
 # use the Quick Help panel on the right to see documentation.
